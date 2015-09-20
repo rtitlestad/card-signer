@@ -24,7 +24,12 @@ import javax.annotation.Generated;
 public class Sequences {
 
 	/**
-	 * The sequence <code>PUBLIC.SYSTEM_SEQUENCE_CB2C5DDF_D971_461A_8779_025C28E07090</code>
+	 * The sequence <code>PUBLIC.SYSTEM_SEQUENCE_5B15E3B1_875C_4E73_8120_9B8385390D2E</code>
 	 */
-	public static final Sequence<Long> SYSTEM_SEQUENCE_CB2C5DDF_D971_461A_8779_025C28E07090 = new SequenceImpl<Long>("SYSTEM_SEQUENCE_CB2C5DDF_D971_461A_8779_025C28E07090", Public.PUBLIC, org.jooq.impl.SQLDataType.BIGINT);
+	public static final Sequence<Long> SYSTEM_SEQUENCE_5B15E3B1_875C_4E73_8120_9B8385390D2E = new SequenceImpl<Long>("SYSTEM_SEQUENCE_5B15E3B1_875C_4E73_8120_9B8385390D2E", Public.PUBLIC, org.jooq.impl.SQLDataType.BIGINT);
+
+	/**
+	 * The sequence <code>PUBLIC.SYSTEM_SEQUENCE_F00AB5AF_C208_4210_A72F_FD574239E0D9</code>
+	 */
+	public static final Sequence<Long> SYSTEM_SEQUENCE_F00AB5AF_C208_4210_A72F_FD574239E0D9 = new SequenceImpl<Long>("SYSTEM_SEQUENCE_F00AB5AF_C208_4210_A72F_FD574239E0D9", Public.PUBLIC, org.jooq.impl.SQLDataType.BIGINT);
 }

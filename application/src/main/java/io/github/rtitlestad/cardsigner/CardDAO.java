@@ -2,12 +2,10 @@ package io.github.rtitlestad.cardsigner;
 
 import io.github.rtitlestad.cardsigner.database.generated.tables.records.CardRecord;
 import org.jooq.Configuration;
+import org.jooq.RecordMapper;
 import org.jooq.impl.DAOImpl;
 
-import java.util.List;
-
 import static io.github.rtitlestad.cardsigner.database.generated.Tables.CARD;
-import static org.jooq.impl.DSL.using;
 
 public class CardDAO extends DAOImpl<CardRecord, Card, Integer> {
 
@@ -20,9 +18,8 @@ public class CardDAO extends DAOImpl<CardRecord, Card, Integer> {
         return card.id();
     }
 
-    public List<Card> fetchAll() {
-        return using(configuration())
-                .selectFrom(CARD)
-                .<Card>fetchInto(ImmutableCard.class);
+    @Override
+    public RecordMapper<CardRecord, Card> mapper() {
+        return record -> Card.of(record.getId(), record.getDescription());
     }
 }

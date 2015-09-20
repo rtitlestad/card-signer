@@ -3,8 +3,9 @@ package io.github.rtitlestad.cardsigner.database;
 import org.h2.jdbcx.JdbcConnectionPool;
 import org.jooq.Configuration;
 import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
 import org.jooq.impl.DefaultConfiguration;
+
+import static org.jooq.impl.DSL.using;
 
 public class CardDatabase {
 
@@ -19,9 +20,18 @@ public class CardDatabase {
     }
 
     public void initialiseSchema() {
-        DSL.using(configuration).execute(
-                "create table \"CARD\"(" +
-                        "\"ID\" int auto_increment primary key, " +
-                        "\"DESCRIPTION\" varchar null)");
+        using(configuration)
+                .execute("create table \"CARD\"(" +
+                        " \"ID\" int auto_increment primary key," +
+                        " \"DESCRIPTION\" varchar null" +
+                        ")");
+
+        using(configuration)
+                .execute("create table \"MESSAGE\"(" +
+                        " \"ID\" int auto_increment primary key," +
+                        " \"TEXT\" varchar null," +
+                        " \"CARD_ID\" int," +
+                        " foreign key (CARD_ID) references CARD(ID)" +
+                        ")");
     }
 }

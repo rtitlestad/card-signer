@@ -5,6 +5,7 @@ package io.github.rtitlestad.cardsigner.database.generated;
 
 
 import io.github.rtitlestad.cardsigner.database.generated.tables.Card;
+import io.github.rtitlestad.cardsigner.database.generated.tables.Message;
 
 import javax.annotation.Generated;
 
@@ -26,4 +27,9 @@ public class Tables {
 	 * The table PUBLIC.CARD
 	 */
 	public static final Card CARD = io.github.rtitlestad.cardsigner.database.generated.tables.Card.CARD;
+
+	/**
+	 * The table PUBLIC.MESSAGE
+	 */
+	public static final Message MESSAGE = io.github.rtitlestad.cardsigner.database.generated.tables.Message.MESSAGE;
 }

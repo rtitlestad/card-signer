@@ -1,0 +1,46 @@
+<style>
+DIV.table
+{
+    display:table;
+}
+DIV.tr
+{
+    display:table-row;
+}
+FORM.td, SPAN.td
+{
+    display:table-cell;
+    padding:3px;
+}
+</style>
+
+<a href="/cards"><< Back to Cards</a>
+
+<h1>Messages for Card {{id}}</h1>
+<h2>{{description}}</h2>
+
+<form method="post" action="/card/{{id}}/sign">
+    <input type="text" name="message">
+    <button type="submit">Sign</button>
+</form>
+
+<div class="table">
+    <div class="tr">
+        <span class="td">ID</span>
+        <span class="td">Message</span>
+    </div>
+    {{#each messages}}
+    <div class="tr">
+        <span class="td">{{id}}</span>
+        <span class="td">{{text}}</span>
+        <form class="td" method="post" action="/card/{{../id}}/messages/{{id}}/update">
+            <input type="text" name="text"/>
+            <button type="submit">Update</button>
+        </form>
+        <form class="td" method="post" action="/card/{{../id}}/messages/{{id}}/delete">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+    {{/each}}
+</div>
+

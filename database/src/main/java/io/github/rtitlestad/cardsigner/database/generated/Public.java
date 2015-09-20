@@ -5,6 +5,7 @@ package io.github.rtitlestad.cardsigner.database.generated;
 
 
 import io.github.rtitlestad.cardsigner.database.generated.tables.Card;
+import io.github.rtitlestad.cardsigner.database.generated.tables.Message;
 import org.jooq.Sequence;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
@@ -28,7 +29,7 @@ import java.util.List;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-	private static final long serialVersionUID = 1338799422;
+	private static final long serialVersionUID = 736955015;
 
 	/**
 	 * The reference instance of <code>PUBLIC</code>
@@ -51,7 +52,8 @@ public class Public extends SchemaImpl {
 
 	private final List<Sequence<?>> getSequences0() {
 		return Arrays.<Sequence<?>>asList(
-			Sequences.SYSTEM_SEQUENCE_CB2C5DDF_D971_461A_8779_025C28E07090);
+			Sequences.SYSTEM_SEQUENCE_5B15E3B1_875C_4E73_8120_9B8385390D2E,
+			Sequences.SYSTEM_SEQUENCE_F00AB5AF_C208_4210_A72F_FD574239E0D9);
 	}
 
 	@Override
@@ -63,6 +65,7 @@ public class Public extends SchemaImpl {
 
 	private final List<Table<?>> getTables0() {
 		return Arrays.<Table<?>>asList(
-			Card.CARD);
+			Card.CARD,
+			Message.MESSAGE);
 	}
 }

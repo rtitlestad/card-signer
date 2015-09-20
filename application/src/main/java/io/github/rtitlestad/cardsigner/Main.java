@@ -9,8 +9,9 @@ public class Main {
         cardDatabase.initialiseSchema();
 
         CardDAO cardDAO = new CardDAO(cardDatabase.getConfiguration());
+        MessageDAO messageDAO = new MessageDAO(cardDatabase.getConfiguration());
 
-        Routes routes = new Routes(cardDAO);
+        Routes routes = new Routes(cardDAO, messageDAO);
         routes.setUp();
     }
 }

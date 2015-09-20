@@ -26,15 +26,15 @@ FORM.td, SPAN.td
         <span class="td">ID</span>
         <span class="td">Description</span>
     </div>
-    {{#each cards}}
+    {{#each this}}
     <div class="tr">
         <span class="td">{{id}}</span>
-        <span class="td">{{description}}</span>
-        <form class="td" method="post" action="/cards/{{id}}/update">
+        <span class="td"><a href="/card/{{id}}">{{description}}</a></span>
+        <form class="td" method="post" action="/card/{{id}}/update">
             <input type="text" name="description"/>
             <button type="submit">Update</button>
         </form>
-        <form class="td" method="post" action="/cards/{{id}}/delete">
+        <form class="td" method="post" action="/card/{{id}}/delete">
             <button type="submit">Delete</button>
         </form>
     </div>
